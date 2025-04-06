@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gigpoly.com/sitemap-index.xml
+Sitemap: https://gigpoly.com/sitemap-index-1.xml
+Sitemap: https://gigpoly.com/sitemap.xml
+Sitemap: http://gigpoly.com/sitemap-index.xml
+Sitemap: http://gigpoly.com/sitemap-index-1.xml
+Sitemap: http://gigpoly.com/sitemap.xml
