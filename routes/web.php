@@ -42,7 +42,7 @@ Route::group(['namespace'=>'Frontend'], function() {
     Route::get('category/{category}', [FrontendController::class, 'category'])->name('category');
     Route::get('trending-products', [FrontendController::class, 'trendings'])->name('trendings');
     Route::get('search', [FrontendController::class, 'search'])->name('search');
-    Route::get('post-details/{slug}', [FrontendController::class, 'postdetails'])->name('post.details');    
+    Route::get('post-details/{slug}', [FrontendController::class, 'postdetails'])->name('post.details');
     Route::get('blogs', [FrontendController::class, 'ourblogs'])->name('ourblogs');
     Route::get('quick-view', [FrontendController::class, 'quickview'])->name('quickview');
     Route::get('site/contact-us', [FrontendController::class, 'contact'])->name('contact');
@@ -63,7 +63,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::get('change-password', [DashboardController::class, 'changepassword'])->name('change_password');
     Route::post('new-password', [DashboardController::class, 'newpassword'])->name('new_password');
 
-    // users route 
+    // users route
     Route::get('users/manage', [UserController::class,'index'])->name('users.index');
     Route::get('users/create', [UserController::class,'create'])->name('users.create');
     Route::post('users/save', [UserController::class,'store'])->name('users.store');
@@ -72,7 +72,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('users/inactive', [UserController::class,'inactive'])->name('users.inactive');
     Route::post('users/active', [UserController::class,'active'])->name('users.active');
     Route::post('users/destroy', [UserController::class,'destroy'])->name('users.destroy');
-    
+
     // roles
     Route::get('roles/manage', [RoleController::class,'index'])->name('roles.index');
     Route::get('roles/{id}/show', [RoleController::class,'show'])->name('roles.show');
@@ -114,7 +114,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('pixels/inactive', [PixelsController::class,'inactive'])->name('pixels.inactive');
     Route::post('pixels/active', [PixelsController::class,'active'])->name('pixels.active');
     Route::post('pixels/destroy', [PixelsController::class,'destroy'])->name('pixels.destroy');
- 
+
     // attribute
     Route::get('press-medias/manage', [PressmediaController::class,'index'])->name('pressmedias.index');
     Route::get('press-medias/{id}/show', [PressmediaController::class,'show'])->name('pressmedias.show');
@@ -127,7 +127,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('press-medias/destroy', [PressmediaController::class,'destroy'])->name('pressmedias.destroy');
 
 
-   
+
     // product
     Route::get('posts/manage', [PostController::class,'index'])->name('posts.index');
     Route::get('posts/{id}/show', [PostController::class,'show'])->name('posts.show');
@@ -144,9 +144,9 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::get('posts/update-popular', [PostController::class,'update_popular'])->name('posts.update_popular');
     Route::get('posts/update-feature', [PostController::class,'update_feature'])->name('posts.update_feature');
     Route::get('posts/update-status', [PostController::class,'update_status'])->name('posts.update_status');
-    
 
-    // settings route 
+
+    // settings route
     Route::get('settings/manage', [GeneralSettingController::class,'index'])->name('settings.index');
     Route::get('settings/create', [GeneralSettingController::class,'create'])->name('settings.create');
     Route::post('settings/save', [GeneralSettingController::class,'store'])->name('settings.store');
@@ -156,7 +156,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('settings/active', [GeneralSettingController::class,'active'])->name('settings.active');
     Route::post('settings/destroy', [GeneralSettingController::class,'destroy'])->name('settings.destroy');
 
-     // settings route 
+     // settings route
     Route::get('social-media/manage', [SocialMediaController::class,'index'])->name('socialmedias.index');
     Route::get('social-media/create', [SocialMediaController::class,'create'])->name('socialmedias.create');
     Route::post('social-media/save', [SocialMediaController::class,'store'])->name('socialmedias.store');
@@ -166,7 +166,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('social-media/active', [SocialMediaController::class,'active'])->name('socialmedias.active');
     Route::post('social-media/destroy', [SocialMediaController::class,'destroy'])->name('socialmedias.destroy');
 
-     // contact route 
+     // contact route
     Route::get('contact/manage', [ContactController::class,'index'])->name('contact.index');
     Route::get('contact/create', [ContactController::class,'create'])->name('contact.create');
     Route::post('contact/save', [ContactController::class,'store'])->name('contact.store');
@@ -176,7 +176,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('contact/active', [ContactController::class,'active'])->name('contact.active');
     Route::post('contact/destroy', [ContactController::class,'destroy'])->name('contact.destroy');
 
-     // banner category route 
+     // banner category route
     Route::get('banner-category/manage', [BannerCategoryController::class,'index'])->name('banner_category.index');
     Route::get('banner-category/create', [BannerCategoryController::class,'create'])->name('banner_category.create');
     Route::post('banner-category/save', [BannerCategoryController::class,'store'])->name('banner_category.store');
@@ -186,7 +186,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('banner-category/active', [BannerCategoryController::class,'active'])->name('banner_category.active');
     Route::post('banner-category/destroy', [BannerCategoryController::class,'destroy'])->name('banner_category.destroy');
 
-    // banner  route 
+    // banner  route
     Route::get('banner/manage', [BannerController::class,'index'])->name('banners.index');
     Route::get('banner/create', [BannerController::class,'create'])->name('banners.create');
     Route::post('banner/save', [BannerController::class,'store'])->name('banners.store');
@@ -195,8 +195,8 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('banner/inactive', [BannerController::class,'inactive'])->name('banners.inactive');
     Route::post('banner/active', [BannerController::class,'active'])->name('banners.active');
     Route::post('banner/destroy', [BannerController::class,'destroy'])->name('banners.destroy');
-    
-     // page category route 
+
+     // page category route
     Route::get('page-category/manage', [PageCategoryController::class,'index'])->name('page_category.index');
     Route::get('page-category/create', [PageCategoryController::class,'create'])->name('page_category.create');
     Route::post('page-category/save', [PageCategoryController::class,'store'])->name('page_category.store');
@@ -205,8 +205,8 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('page-category/inactive', [PageCategoryController::class,'inactive'])->name('page_category.inactive');
     Route::post('page-category/active', [PageCategoryController::class,'active'])->name('page_category.active');
     Route::post('page-category/destroy', [PageCategoryController::class,'destroy'])->name('page_category.destroy');
-    
-    // contact route 
+
+    // contact route
     Route::get('page/manage', [CreatePageController::class,'index'])->name('pages.index');
     Route::get('page/create', [CreatePageController::class,'create'])->name('pages.create');
     Route::post('page/save', [CreatePageController::class,'store'])->name('pages.store');
@@ -237,7 +237,7 @@ Route::group(['namespace'=>'Admin','middleware' => ['auth','lock'],'prefix'=>'ad
     Route::post('blog/active', [BlogController::class,'active'])->name('blogs.active');
     Route::post('blog/destroy', [BlogController::class,'destroy'])->name('blogs.destroy');
 
-    // subscription route 
+    // subscription route
     Route::get('subscription/manage', [SubscriptionController::class,'index'])->name('subscriptions.index');
     Route::get('subscription/{id}/edit/', [SubscriptionController::class,'edit'])->name('subscriptions.edit');
     Route::post('subscription/update', [SubscriptionController::class,'update'])->name('subscriptions.update');

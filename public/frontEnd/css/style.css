@@ -376,6 +376,7 @@ button.btn {
 .white-popup {
     background-color: #fff;
     width: 650px;
+    position: relative;
 }
 
 .banner-newsletter {
@@ -471,4 +472,30 @@ input[type=checkbox]+label:before {
 
 input[type=checkbox]:checked+label:before {
     background: url(//sojourncellars.lunasoft.com/uploads/site/1/skin/icon-check.png) no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+    .newsletter-popup {
+        padding: 10px;
+    }
+    .banner-newsletter {
+        float: left;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        opacity: 0.6;
+    }
+
+    .banner-newsletter {
+        opacity: 0;
+        display: none;
+    }
+
+    .banner-newsletter img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }

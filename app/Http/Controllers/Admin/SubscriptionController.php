@@ -27,10 +27,10 @@ class SubscriptionController extends Controller
         $edit_data = Subscriber::find($id);
         return view('backEnd.subscription.edit',compact('edit_data'));
     }
-    
+
     public function update(Request $request)
     {
-        
+
         $this->validate($request, [
             'email' => 'required',
             'customer_ip' => 'required',
@@ -43,11 +43,11 @@ class SubscriptionController extends Controller
         Toastr::success('Success','Data update successfully');
         return redirect()->route('subscriptions.index');
     }
- 
+
     public function inactive(Request $request)
     {
         $inactive = Subscriber::find($request->hidden_id);
-        $inactive->status = 1;
+        $inactive->status = 0;
         $inactive->save();
         Toastr::success('Success','Data inactive successfully');
         return redirect()->back();

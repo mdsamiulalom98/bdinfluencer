@@ -29,15 +29,15 @@
                         <div class="card bg-pattern">
 
                             <div class="card-body p-4">
-                                
+
                                 <div class="text-center w-75 m-auto mb-3">
                                     <div class="auth-logo">
                                         <a href="{{ route('home') }}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-                                                <img src="{{asset($generalsetting->white_logo)}}" style="height: auto; width: 100%" alt="" height="50">
+                                                <img src="{{asset($generalsetting->white_logo)}}" style="width: auto; height: 100px" alt="" height="50">
                                             </span>
                                         </a>
-                    
+
                                         <a href="" class="logo logo-light text-center">
                                             <span class="logo-lg">
                                                  <img src="{{asset($generalsetting->white_logo)}}" style="height: auto; width: 100%" alt="" height="50">
@@ -104,6 +104,6 @@
 
         <!-- App js -->
         <script src="{{asset('public/backEnd/')}}/assets/js/app.min.js"></script>
-        
+
     </body>
 </html>

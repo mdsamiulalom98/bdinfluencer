@@ -49,8 +49,6 @@
                             </a>
                         </li>
 
-                       
-
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="{{asset(Auth::user()->image)}}" alt="user-image" class="rounded-circle" />
@@ -211,7 +209,7 @@
                                 </a>
                             </li>
 
-                            
+
                             <!-- nav items -->
                             <li class="@if(request()->is(['admin/categories/*', 'admin/categories/*', 'admin/subcategories/*', 'admin/childcategories/*', 'admin/brands/*', 'admin/flavors/*', 'admin/sizes/*', 'admin/reviews/*'])) menuitem-active @endif">
                                 <a href="#siebar-product" data-bs-toggle="collapse" @if(request()->is(['admin/categories/*', 'admin/categories/*', 'admin/subcategories/*', 'admin/childcategories/*', 'admin/brands/*', 'admin/flavors/*', 'admin/sizes/*', 'admin/reviews/*'])) aria-expanded="true" @endif>
@@ -248,7 +246,7 @@
                                         <li>
                                             <a href="{{route('permissions.index')}}"><i data-feather="file-plus"></i> Permissions</a>
                                         </li>
-                                        
+
                                     </ul>
                                 </div>
                             </li>
@@ -267,8 +265,8 @@
                                         <li>
                                             <a href="{{route('socialmedias.index')}}"><i data-feather="file-plus"></i> Social Media</a>
                                         </li>
-                                        
-                                        
+
+
                                     </ul>
                                 </div>
                             </li>
@@ -291,8 +289,8 @@
                                 </div>
                             </li>
                             <!-- nav items end -->
-                            
-                            
+
+
                             <li  class="@if(request()->is(['admin/page/*'])) menuitem-active @endif">
                                 <a href="#sidebar-createpage" data-bs-toggle="collapse" @if(request()->is(['admin/page/*'])) aria-expanded="true" @endif>
                                     <i data-feather="file"></i>
@@ -308,7 +306,7 @@
                                 </div>
                             </li>
                             <!-- nav items end -->
-                            
+
                             <li  class="@if(request()->is(['admin/contact/*'])) menuitem-active @endif">
                                 <a href="#sidebar-contact" data-bs-toggle="collapse" @if(request()->is(['admin/contact/*'])) aria-expanded="true" @endif>
                                     <i data-feather="hash"></i>
@@ -324,7 +322,23 @@
                                 </div>
                             </li>
                             <!-- nav items end -->
-                           
+
+                            <li  class="@if(request()->is(['admin/contact/*'])) menuitem-active @endif">
+                                <a href="#sidebar-newsletter" data-bs-toggle="collapse" @if(request()->is(['admin/contact/*'])) aria-expanded="true" @endif>
+                                    <i data-feather="file-plus"></i>
+                                    <span> Newsletter </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse @if(request()->is(['admin/contact/*'])) show @endif" id="sidebar-newsletter">
+                                    <ul class="nav-second-level">
+                                        <li>
+                                            <a href="{{route('subscriptions.index')}}"><i data-feather="file-plus"></i> Subscribers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- nav items end -->
+
                         </ul>
                     </div>
                     <!-- End Sidebar -->

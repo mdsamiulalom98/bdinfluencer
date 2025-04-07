@@ -8,9 +8,9 @@
         <!-- App favicon -->
 
         <link rel="shortcut icon" href="{{asset($generalsetting->favicon)}}" alt="GigPoly"/>
-        <meta name="author" content="{{ $generalsetting->name }}"> 
+        <meta name="author" content="{{ $generalsetting->name }}">
         @stack('seo')
-        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Homepage - GigPoly</title>
@@ -61,13 +61,13 @@
 
         <!-- include main style -->
         <link rel="stylesheet" href="{{asset('public/frontEnd/css/theme/demo-two.min.css')}}">
-        <link rel="stylesheet" href="{{asset('public/frontEnd/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('public/frontEnd/css/style.css?v=1.0.0')}}">
 
         <!-- include scripts -->
         <script src="{{asset('public/frontEnd/js/uni-core/js/uni-core.min.js')}}"></script>
         <script src="{{asset('public/frontEnd/js/libs/countdown.min.js')}}"></script>
         <script src="{{asset('public/frontEnd/js/libs/tooltip.min.js')}}"></script>
-        
+
     </head>
     <body>
         <div class="main-header">
@@ -116,7 +116,7 @@
                             <ul>
                                 @foreach($menucategories as $index => $category)
                                 <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a></li>
-                                @endforeach      
+                                @endforeach
                             </ul>
                       </div>
                   </div>
@@ -128,7 +128,7 @@
            <ul>
                 @foreach($menucategories as $index => $category)
                 <li><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a></li>
-                @endforeach      
+                @endforeach
             </ul>
         </div>
         <div id="wrapper" class="wrap">
@@ -142,7 +142,7 @@
                         <div class="outer overflow-hidden">
                             <div class="container-full">
                                 <div class="inner panel">
-                                    
+
                                     <div class="row child-cols-3 sm:child-cols col-match g-narrow">
                                         @foreach($post_gallery as $key=>$value)
                                         <div>
@@ -167,18 +167,18 @@
                                             <img src="{{ asset($generalsetting->dark_logo) }}" alt="Gigpoly" data-uc-svg>
                                         </a>
                                         <hr class=" d-none lg:d-block">
-                                       
+
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="row child-cols-12  g-4">
                                          <ul class="social-icons nav-x gap-1">
-                                                    @foreach ($socialicons as $social)   
+                                                    @foreach ($socialicons as $social)
                                             <li>
                                              <a class="d-inline-flex justify-center items-center transition-all duration-200 ease-in hover:scale-110" href="{{ $social->link }}"><i class="{{ $social->icon }} lg:icon-3"></i></a>
                                             </li>
                                             @endforeach
-                                                    
+
                                         </ul>
                                         <div>
                                             <div class="widget-wrap">
@@ -193,20 +193,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="footer-copyrights-area panel vstack gap-2">
-                            
+
                             <p class="fs-6 opacity-50 m-0 text-center">{{date('Y')}} © All rights reserved.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-       
+
 
         <!-- include jquery & bootstrap js -->
         <script defer src="{{asset('public/frontEnd')}}/js/libs/jquery.min.js"></script>
@@ -270,6 +270,7 @@
         <script src="{{asset('public/backEnd/')}}/assets/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        @stack('script')
         <script>
             $(document).ready(function(){
                  $('.sidebar_icon').click(function(){
@@ -288,11 +289,11 @@
                 });
             });
         </script>
-        
+
         <script type="text/javascript">
           window.addEventListener('message', (event) => {
             const iframeElt = document.getElementById('google-iframe');
-    
+
             switch(event.data.type) {
               case 'verifyPing':
                 // This part handles the initial handshake by the Google Yolo iframe.
